@@ -13,6 +13,7 @@ HEADERS = {'content-type': 'application/json'}
 IG_ACC_TO_REPLY = '17841434643766488'
 APP_ID = '2908275256066436'
 APP_NAME = 'baozhangren'
+HOP_EVENTS = set(['request_thread_control','pass_thread_control','take_thread_control','app_roles','pass_metadata'])
       
       
 def send_message(body):
@@ -27,11 +28,14 @@ def send_message(body):
       for message in entry[channel]:
         sender = message['sender']['id']
         recipient_id =  message['recipient']['id']
+        webhook_type = None
         if 'message' in message: 
           webhook_type='message'
-        elif 'request_thread_control' in message:
-          webhook_type='request_thread_control'
-        else:
+        for event in HOP_EVENTS:
+          if event in message:
+            webhook_type = event
+            break
+        if webhook_type == None:
           return
         if 'text' in message[webhook_type]:
           msg_text = message[webhook_type]['text']
@@ -44,7 +48,7 @@ def send_message(body):
           send_message_to_recipient(json.dumps(body), recipient_id, sender)
           print('sent message to', recipient_id)
         else:
-          if webhook_type == 'request_thread_control':
+          if webhook_type in HOP_EVENTS:
             send_message_to_recipient(json.dumps(body), recipient_id, sender)
             return
           send_message_to_recipient(json.dumps(body), sender, recipient_id)
