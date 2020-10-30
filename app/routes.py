@@ -20,16 +20,15 @@ def send_message(body):
         return
       if 'messaging' in entry:
         channel = 'messaging'
-       else:
+      else:
         channel = 'standby'
+      print('log')
       for message in entry[channel]:
         sender = message['sender']['id']
         recipient_id =  message['recipient']['id']
         if 'message' in message: 
             webhook_type='message'
-          elif 'postback' in message:
-            webhook_type='postback' 
-          else:
+        else:
             return
         if 'text' in message[webhook_type]:
           msg_text = message[webhook_type]['text']
