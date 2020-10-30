@@ -18,13 +18,17 @@ def send_message(body):
     for entry in body['entry']:
       if(entry['id'] != IG_ACC_TO_REPLY):
         return
-      for message in entry['messaging']:
+      if 'messaging' in entry:
+        channel = 'messaging'
+       else:
+        channel = 'standby'
+      for message in entry[channel]:
         sender = message['sender']['id']
         recipient_id =  message['recipient']['id']
-        if 'message' in message: 
-          webhook_type='message'
-        else:
-          return
+        #if 'message' in message: 
+          #webhook_type='message'
+        #else:
+          #return
         if 'text' in message[webhook_type]:
           msg_text = message[webhook_type]['text']
           if 'echoing_back' in msg_text:
