@@ -18,7 +18,7 @@ def send_message(body):
     for entry in body['entry']:
       if(entry['id'] != IG_ACC_TO_REPLY):
         return
-      if 'messaging' in message:
+      if 'messaging' in entry:
         channel = 'messaging';
       else:
         channel = 'standby';
@@ -27,6 +27,8 @@ def send_message(body):
         recipient_id =  message['recipient']['id']
         if 'message' in message: 
           webhook_type='message'
+        elif 'request_thread_control' in message:
+          webhook_type='request_thread_control'
         else:
           return
         if 'text' in message[webhook_type]:
