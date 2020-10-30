@@ -11,6 +11,8 @@ SEND_API_URL = 'https://graph.facebook.com/v5.0/me/messages?access_token=%s'\
 
 HEADERS = {'content-type': 'application/json'}
 IG_ACC_TO_REPLY = '17841434643766488'
+APP_ID = '2908275256066436'
+APP_NAME = 'baozhangren'
       
       
 def send_message(body):
@@ -37,6 +39,8 @@ def send_message(body):
           if 'echoing_back' in msg_text:
             return
         body['echoing_back'] = 'true'
+        body['app_id'] = APP_ID
+        body['app_name'] = APP_NAME
         if 'is_echo' in message[webhook_type]:
           if webhook_type == 'request_thread_control':
             send_message_to_recipient(json.dumps(body), sender, recipient_id)
