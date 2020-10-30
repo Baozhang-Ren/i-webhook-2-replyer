@@ -25,10 +25,12 @@ def send_message(body):
       for message in entry[channel]:
         sender = message['sender']['id']
         recipient_id =  message['recipient']['id']
-        #if 'message' in message: 
-          #webhook_type='message'
-        #else:
-          #return
+        if 'message' in message: 
+          webhook_type='message'
+        elif 'request_thread_control' in message:
+          webhook_type='request_thread_control'
+        else:
+          return
         if 'text' in message[webhook_type]:
           msg_text = message[webhook_type]['text']
           if 'echoing_back' in msg_text:
