@@ -31,6 +31,7 @@ def send_message(body):
           webhook_type='request_thread_control'
         else:
           return
+        print('webhook_type ',webhook_type)
         if 'text' in message[webhook_type]:
           msg_text = message[webhook_type]['text']
           if 'echoing_back' in msg_text:
@@ -43,6 +44,9 @@ def send_message(body):
           send_message_to_recipient(json.dumps(body), recipient_id, sender)
           print('sent message to', recipient_id)
         else:
+          if webhook_type == 'request_thread_control':
+            send_message_to_recipient(json.dumps(body), recipient_id, sender)
+            return
           send_message_to_recipient(json.dumps(body), sender, recipient_id)
           print('sent message to', sender)
   except Exception as e:
