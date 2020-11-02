@@ -96,7 +96,6 @@ def send_message_to_recipient(message_text, recipient_id, page_id,url):
     'message': {
       'text': message_text,
     },
-    'tag': 'human_agent',
   }
   r = requests.post(url, data=json.dumps(message), headers=HEADERS)
   if r.status_code != 200:
