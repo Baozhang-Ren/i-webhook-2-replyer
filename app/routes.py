@@ -5,11 +5,18 @@ import json
 import requests
 
 WEBHOOK_VERIFY_TOKEN = 'test_faq_token'
-PAGE_ACCESS_TOKEN = 'EAApVD5mMAYQBAK28ZAIvP1HgaH8KSxB4uB1MZA3emG5bMlZA4ADpKB9DZBy0hOj3KZA3UsUBa15nJanzEdkuOfVnhzZCEOOPanJzc9dCHKf4EY8PLhWkeUeQgiKf2eLiZCkSXZBwYAIeb7pbPZBWLZBrccVAfDIZAvtCPWufSubdZCuRKAZDZD'
-SEND_API_URL = 'https://graph.facebook.com/v5.0/me/messages?access_token=%s'\
+PAGE_ACCESS_TOKEN_page1_app1 = 'EAApVD5mMAYQBAK28ZAIvP1HgaH8KSxB4uB1MZA3emG5bMlZA4ADpKB9DZBy0hOj3KZA3UsUBa15nJanzEdkuOfVnhzZCEOOPanJzc9dCHKf4EY8PLhWkeUeQgiKf2eLiZCkSXZBwYAIeb7pbPZBWLZBrccVAfDIZAvtCPWufSubdZCuRKAZDZD'
+SEND_API_URL_page1_app1 = 'https://graph.facebook.com/v5.0/me/messages?access_token=%s'\
   %PAGE_ACCESS_TOKEN
-PAGE_ACCESS_TOKEN2 = 'EAApVD5mMAYQBANT8VphKJKVMpVqXBJPkbePZBQZBVaywiWBaY5RIZBxumJwsZCjrMNWQOWObhTEymB6Nd0wWyh0XFXjAZBOaRrhPrsrwt4xF4aiU2FSimOxYckgnGCplPU24v4dhv0wQmoVSMxZCMhNmZB1GXL6x9T40RFvC5a8EAZDZD'
-SEND_API_URL2 = 'https://graph.facebook.com/v5.0/me/messages?access_token=%s'\
+PAGE_ACCESS_TOKEN_page1_app2 = 'EAALC8ZAZCw0TcBAP7BZCTLmv90zt9nIkwLkYCzCBv5ZBxEqeZA65TZBusxIfHeMUEFzrjaL4CdwScQd1IyxPFpsaowBucUhDUMbPv83XMDeqYXkm17Ah0p7jxy96cljZBqNifrAGQ9NajTiAhYujZC0rrcHGP1A8yD8oFZA7iJu0RmBAHf9ZB0M2f2'
+SEND_API_URL2_page1_app2 = 'https://graph.facebook.com/v5.0/me/messages?access_token=%s'\
+  %PAGE_ACCESS_TOKEN2
+
+PAGE_ACCESS_TOKEN_page2_app1 = 'EAApVD5mMAYQBANT8VphKJKVMpVqXBJPkbePZBQZBVaywiWBaY5RIZBxumJwsZCjrMNWQOWObhTEymB6Nd0wWyh0XFXjAZBOaRrhPrsrwt4xF4aiU2FSimOxYckgnGCplPU24v4dhv0wQmoVSMxZCMhNmZB1GXL6x9T40RFvC5a8EAZDZD'
+SEND_API_URL_page2_app1 = 'https://graph.facebook.com/v5.0/me/messages?access_token=%s'\
+  %PAGE_ACCESS_TOKEN
+PAGE_ACCESS_TOKEN_page2_app2 = 'EAALC8ZAZCw0TcBAD3ZCgldyYbw5ZAdUeyTvMZCNWcXGcYxiHvCdlGtoiZCFznFlZAUmXVuuFp2GXZAf1HNnNlLTIplyWtT7mbnZAPjdkuwcNxwJGaC4LzGbUXUqG7MEeC0nFOyIWyhs5XfqV4KxpvQcXbOtZCDPf2XLwX1cZBvuqoIm2QZDZD'
+SEND_API_URL2_page2_app2 = 'https://graph.facebook.com/v5.0/me/messages?access_token=%s'\
   %PAGE_ACCESS_TOKEN2
 
 HEADERS = {'content-type': 'application/json'}
@@ -22,18 +29,26 @@ HOP_EVENTS = set(['request_thread_control','pass_thread_control','take_thread_co
 def send_message(body):
   try:
     for entry in body['entry']:
-      url = SEND_API_URL
+      page = 'page1'
       if(entry['id'] != IG_ACC_TO_REPLY):
         print(entry['id'],'return')
-        url = SEND_API_URL2
+        page = 'page2'
+      app = 'app1'
       if 'messaging' in entry:
         channel = 'messaging';
       else:
         channel = 'standby';
-        if url==SEND_API_URL:
-          url = SEND_API_URL2
+        app = 'app2'
+      if page=='page1':
+        if app=='app1':
+          url = SEND_API_URL_page1_app1
         else:
-          url=SEND_API_URL
+          url = SEND_API_URL_page1_app2
+      else:
+        if app=='app1':
+          url = SEND_API_URL_page2_app1
+        else:
+          url = SEND_API_URL_page2_app2
       for message in entry[channel]:
         if 'echoing_back' in message:
           return
