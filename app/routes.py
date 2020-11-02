@@ -42,7 +42,10 @@ def send_message(body):
             break
         if webhook_type == None:
           return
+        if 'echoing_back' in message:
+          return
         if 'text' in message[webhook_type]:
+          
           msg_text = message[webhook_type]['text']
           if 'echoing_back' in msg_text:
             return
