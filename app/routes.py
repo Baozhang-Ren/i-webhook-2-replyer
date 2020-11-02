@@ -21,7 +21,7 @@ def send_message(body):
   try:
     for entry in body['entry']:
       if(entry['id'] != IG_ACC_TO_REPLY):
-        print(entry['id'],return)
+        print(entry['id'],'return')
         return
       if 'messaging' in entry:
         channel = 'messaging';
