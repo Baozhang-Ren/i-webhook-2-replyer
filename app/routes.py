@@ -6,7 +6,7 @@ import requests
 
 WEBHOOK_VERIFY_TOKEN = 'test_faq_token'
 #Baozhang Ren baozhangren
-PAGE_ACCESS_TOKEN_page1_app1 = 'EAApVD5mMAYQBAN7jNyAZBdDqoGmWyxzEeZBpUZA8RPIrJJiNud5lV6D7OjJqIeaZBVK4H2npZAWgIYDMu9yzouOAR1ZCy3ttCm2gzNHaLN3haLC2zRshwHkdZBRvM1Wl8vQhK1P2sfdaWBZCqsVhHRLDHSHSkkqG0LouDZCcXSAPBAQZDZD'
+PAGE_ACCESS_TOKEN_page1_app1 = 'EAApVD5mMAYQBAHOjjrc5B6ZCct4ghNpUyMMAYRuTVcN3tOujYTqUw3YEET4EMnZCu72QIpWQ9YhkKEWpKZBDU7IEaAJneRfdiZAAtfP96RzAusgv6iEfnFIKGIEqPz33Yfk8us23BU1D3hlfSCQKn763ZAHZANjfoDBqxU3JAgiQZDZD'
 SEND_API_URL_page1_app1 = 'https://graph.facebook.com/v5.0/me/messages?access_token=%s'\
   %PAGE_ACCESS_TOKEN_page1_app1
 
