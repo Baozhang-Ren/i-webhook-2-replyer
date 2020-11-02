@@ -17,7 +17,6 @@ HOP_EVENTS = set(['request_thread_control','pass_thread_control','take_thread_co
       
       
 def send_message(body):
-  print('body',body)
   try:
     for entry in body['entry']:
       if(entry['id'] != IG_ACC_TO_REPLY):
@@ -85,7 +84,6 @@ def index():
 
 @app.route('/webhook', methods=['GET', 'POST'])
 def webhook():
-  print('request',request.payload)
   if request.method == 'GET':
     
     mode = request.args['hub.mode']
