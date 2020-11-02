@@ -7,19 +7,19 @@ import requests
 WEBHOOK_VERIFY_TOKEN = 'test_faq_token'
 #Baozhang Ren baozhangren
 PAGE_ACCESS_TOKEN_page1_app1 = 'EAApVD5mMAYQBAHOjjrc5B6ZCct4ghNpUyMMAYRuTVcN3tOujYTqUw3YEET4EMnZCu72QIpWQ9YhkKEWpKZBDU7IEaAJneRfdiZAAtfP96RzAusgv6iEfnFIKGIEqPz33Yfk8us23BU1D3hlfSCQKn763ZAHZANjfoDBqxU3JAgiQZDZD'
-SEND_API_URL_page1_app1 = 'https://graph.facebook.com/v5.0/me/messages?access_token=%s'\
+SEND_API_URL_page1_app1 = 'https://graph.facebook.com/v8.0/me/messages?access_token=%s'\
   %PAGE_ACCESS_TOKEN_page1_app1
 
 PAGE_ACCESS_TOKEN_page1_app2 = 'EAALC8ZAZCw0TcBAP7BZCTLmv90zt9nIkwLkYCzCBv5ZBxEqeZA65TZBusxIfHeMUEFzrjaL4CdwScQd1IyxPFpsaowBucUhDUMbPv83XMDeqYXkm17Ah0p7jxy96cljZBqNifrAGQ9NajTiAhYujZC0rrcHGP1A8yD8oFZA7iJu0RmBAHf9ZB0M2f2'
-SEND_API_URL_page1_app2 = 'https://graph.facebook.com/v5.0/me/messages?access_token=%s'\
+SEND_API_URL_page1_app2 = 'https://graph.facebook.com/v8.0/me/messages?access_token=%s'\
   %PAGE_ACCESS_TOKEN_page1_app2
 
 PAGE_ACCESS_TOKEN_page2_app1 = 'EAALC8ZAZCw0TcBAPl6qBzKo2E04aJJUsNGEdiPrzXZCaQMgQV9xhlADm1F7MsdhTK0IQ93uo7ZAGG5JOl3XpNoVeTKmAPqeEM0LZBWZCSCZCdMTim8bGS1Ec0lucele6FEuTp1X1LMJLnVQYXbq7oRLMGDPAqwZCjSEZBSYwzqeFZCpQZDZD'
-SEND_API_URL_page2_app1 = 'https://graph.facebook.com/v5.0/me/messages?access_token=%s'\
+SEND_API_URL_page2_app1 = 'https://graph.facebook.com/v8.0/me/messages?access_token=%s'\
   %PAGE_ACCESS_TOKEN_page2_app1
 
 PAGE_ACCESS_TOKEN_page2_app2 = 'EAALC8ZAZCw0TcBAA92OWJ6BGIZCpcZCxlLrEVHPujccboiiB2ZCEv08AOEAJNdrhJxzIpneYG6DmguDXfjmGL8mrbntOIxZB5A6Fl7DFZBk3T5g8VZC3fADe49HkVZAImkrEQVMV5EZBgN7ZAklER8kVTtnpki3OtoQLycjFw1W2rnrxAZDZD'
-SEND_API_URL_page2_app2 = 'https://graph.facebook.com/v5.0/me/messages?access_token=%s'\
+SEND_API_URL_page2_app2 = 'https://graph.facebook.com/v8.0/me/messages?access_token=%s'\
   %PAGE_ACCESS_TOKEN_page2_app2
 
 HEADERS = {'content-type': 'application/json'}
