@@ -30,6 +30,10 @@ def send_message(body):
         channel = 'messaging';
       else:
         channel = 'standby';
+        if url==SEND_API_URL:
+          url = SEND_API_URL2
+        else:
+          url=SEND_API_URL
       for message in entry[channel]:
         if 'echoing_back' in message:
           return
@@ -53,6 +57,7 @@ def send_message(body):
         body['app_id'] = APP_ID
         body['app_name'] = APP_NAME
         if 'is_echo' in message[webhook_type]:
+          return
           send_message_to_recipient(json.dumps(body), recipient_id, sender,url)
           print('sent message to', recipient_id)
         else:
