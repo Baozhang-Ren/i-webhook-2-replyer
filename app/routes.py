@@ -85,7 +85,7 @@ def index():
 
 @app.route('/webhook', methods=['GET', 'POST'])
 def webhook():
-  print('request',request.webhook_metadata)
+  print('request',request.payload)
   if request.method == 'GET':
     
     mode = request.args['hub.mode']
