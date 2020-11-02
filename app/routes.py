@@ -41,6 +41,7 @@ def send_message(body):
       else:
         channel = 'standby';
         app = 'app2'
+      print('page',page,'app',app)
       if page=='page1':
         if app=='app1':
           url = SEND_API_URL_page1_app1
