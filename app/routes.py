@@ -10,7 +10,7 @@ SEND_API_URL_page1_app1 = 'https://graph.facebook.com/v5.0/me/messages?access_to
   %PAGE_ACCESS_TOKEN_page1_app1
 
 PAGE_ACCESS_TOKEN_page1_app2 = 'EAALC8ZAZCw0TcBAP7BZCTLmv90zt9nIkwLkYCzCBv5ZBxEqeZA65TZBusxIfHeMUEFzrjaL4CdwScQd1IyxPFpsaowBucUhDUMbPv83XMDeqYXkm17Ah0p7jxy96cljZBqNifrAGQ9NajTiAhYujZC0rrcHGP1A8yD8oFZA7iJu0RmBAHf9ZB0M2f2'
-SEND_API_URL2_page1_app2 = 'https://graph.facebook.com/v5.0/me/messages?access_token=%s'\
+SEND_API_URL_page1_app2 = 'https://graph.facebook.com/v5.0/me/messages?access_token=%s'\
   %PAGE_ACCESS_TOKEN_page1_app2
 
 PAGE_ACCESS_TOKEN_page2_app1 = 'EAApVD5mMAYQBANT8VphKJKVMpVqXBJPkbePZBQZBVaywiWBaY5RIZBxumJwsZCjrMNWQOWObhTEymB6Nd0wWyh0XFXjAZBOaRrhPrsrwt4xF4aiU2FSimOxYckgnGCplPU24v4dhv0wQmoVSMxZCMhNmZB1GXL6x9T40RFvC5a8EAZDZD'
@@ -18,7 +18,7 @@ SEND_API_URL_page2_app1 = 'https://graph.facebook.com/v5.0/me/messages?access_to
   %PAGE_ACCESS_TOKEN_page2_app1
 
 PAGE_ACCESS_TOKEN_page2_app2 = 'EAALC8ZAZCw0TcBAD3ZCgldyYbw5ZAdUeyTvMZCNWcXGcYxiHvCdlGtoiZCFznFlZAUmXVuuFp2GXZAf1HNnNlLTIplyWtT7mbnZAPjdkuwcNxwJGaC4LzGbUXUqG7MEeC0nFOyIWyhs5XfqV4KxpvQcXbOtZCDPf2XLwX1cZBvuqoIm2QZDZD'
-SEND_API_URL2_page2_app2 = 'https://graph.facebook.com/v5.0/me/messages?access_token=%s'\
+SEND_API_URL_page2_app2 = 'https://graph.facebook.com/v5.0/me/messages?access_token=%s'\
   %PAGE_ACCESS_TOKEN_page2_app2
 
 HEADERS = {'content-type': 'application/json'}
