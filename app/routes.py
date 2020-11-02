@@ -30,6 +30,7 @@ HOP_EVENTS = set(['request_thread_control','pass_thread_control','take_thread_co
       
       
 def send_message(body):
+  print('body',body)
   try:
     for entry in body['entry']:
       page = 'page1'
@@ -68,7 +69,6 @@ def send_message(body):
         if webhook_type == None:
           return
         if 'text' in message[webhook_type]:
-          
           msg_text = message[webhook_type]['text']
           if 'echoing_back' in msg_text:
             return
@@ -76,15 +76,15 @@ def send_message(body):
         body['app_id'] = APP_ID
         body['app_name'] = APP_NAME
         if 'is_echo' in message[webhook_type]:
-          return
-          send_message_to_recipient(json.dumps(body), recipient_id, sender,url)
-          print('sent message to', recipient_id)
+          #send_message_to_recipient(json.dumps(body), recipient_id, sender, url)
+          print('sent message to recipient_id', recipient_id)
         else:
           if webhook_type in HOP_EVENTS:
-            send_message_to_recipient(json.dumps(body), recipient_id, sender,url)
+            #send_message_to_recipient(json.dumps(body), recipient_id, sender,url)
+            print('sent message to HOP_EVENTS recipient', recipient_id)
             return
-          send_message_to_recipient(json.dumps(body), sender, recipient_id,url)
-          print('sent message to', sender)
+          #send_message_to_recipient(json.dumps(body), sender, recipient_id,url)
+          print('sent message to sender', sender)
   except Exception as e:
      print("swapnilc-Exception sending")
      print(e)
@@ -102,10 +102,9 @@ def send_message_to_recipient(message_text, recipient_id, page_id,url):
   r = requests.post(url, data=json.dumps(message), headers=HEADERS)
   if r.status_code != 200:
     print('== ERROR====')
-    print(SEND_API_URL)
+    print(url)
     print(r.json())
     print('==============')
-
 
 @app.route('/')
 @app.route('/index')
