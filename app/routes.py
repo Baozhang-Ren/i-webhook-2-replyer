@@ -13,13 +13,15 @@ HEADERS = {'content-type': 'application/json'}
 IG_ACC_TO_REPLY = '17841434643766488'
 APP_ID = '2908275256066436'
 APP_NAME = 'baozhangren'
-HOP_EVENTS = set(['request_thread_control','pass_thread_control','take_thread_control','app_roles','pass_metadata'])
+HOP_EVENTS = set(['request_thread_control','pass_thread_control','take_thread_control','pass_metadata'])
       
       
 def send_message(body):
-  print(body)
+  print('body',body)
   try:
     for entry in body['entry']:
+      sender = message['sender']['id']
+      recipient_id =  message['recipient']['id']
       if(entry['id'] != IG_ACC_TO_REPLY):
         return
       if 'messaging' in entry:
@@ -36,11 +38,6 @@ def send_message(body):
             break
         if webhook_type == None:
           return
-        if webhook_type != 'app_roles':
-          sender = message['sender']['id']
-        else:
-          sender = None
-        recipient_id =  message['recipient']['id']
         if 'text' in message[webhook_type]:
           msg_text = message[webhook_type]['text']
           if 'echoing_back' in msg_text:
