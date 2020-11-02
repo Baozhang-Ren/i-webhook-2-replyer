@@ -49,13 +49,13 @@ def send_message(body):
         body['app_id'] = APP_ID
         body['app_name'] = APP_NAME
         if 'is_echo' in message[webhook_type]:
-          send_message_to_recipient(json.dumps(body), recipient_id, sender)
+          send_message_to_recipient(json.dumps(body), recipient_id, sender,url)
           print('sent message to', recipient_id)
         else:
           if webhook_type in HOP_EVENTS:
-            send_message_to_recipient(json.dumps(body), recipient_id, sender)
+            send_message_to_recipient(json.dumps(body), recipient_id, sender,url)
             return
-          send_message_to_recipient(json.dumps(body), sender, recipient_id)
+          send_message_to_recipient(json.dumps(body), sender, recipient_id,url)
           print('sent message to', sender)
   except Exception as e:
      print("swapnilc-Exception sending")
