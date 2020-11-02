@@ -31,6 +31,8 @@ def send_message(body):
       else:
         channel = 'standby';
       for message in entry[channel]:
+        if 'echoing_back' in message:
+          return
         sender = message['sender']['id']
         recipient_id =  message['recipient']['id']
         webhook_type = None
@@ -41,8 +43,6 @@ def send_message(body):
             webhook_type = event
             break
         if webhook_type == None:
-          return
-        if 'echoing_back' in message:
           return
         if 'text' in message[webhook_type]:
           
