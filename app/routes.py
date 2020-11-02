@@ -6,8 +6,11 @@ import requests
 
 WEBHOOK_VERIFY_TOKEN = 'test_faq_token'
 PAGE_ACCESS_TOKEN = 'EAApVD5mMAYQBAK28ZAIvP1HgaH8KSxB4uB1MZA3emG5bMlZA4ADpKB9DZBy0hOj3KZA3UsUBa15nJanzEdkuOfVnhzZCEOOPanJzc9dCHKf4EY8PLhWkeUeQgiKf2eLiZCkSXZBwYAIeb7pbPZBWLZBrccVAfDIZAvtCPWufSubdZCuRKAZDZD'
+PAGE_ACCESS_TOKEN2 = 'EAApVD5mMAYQBADPglreucZAwthxB8OWlGVcWRpOAyTGXgHfXLt9TFzvt9iBpwlyVUtMlSYNaECDmzH3ZBTy7fvMTaAgBh8OZC96KR06iJxfZBiDGtQbLpx6yjtdZB4aeMh1nfZAp1r0NV7Y8KYZBQ12DzZAs3zPSbycRWucXOvyUjAZDZD'
 SEND_API_URL = 'https://graph.facebook.com/v5.0/me/messages?access_token=%s'\
   %PAGE_ACCESS_TOKEN
+SEND_API_URL2 = 'https://graph.facebook.com/v5.0/me/messages?access_token=%s'\
+  %PAGE_ACCESS_TOKEN2
 
 HEADERS = {'content-type': 'application/json'}
 IG_ACC_TO_REPLY = '17841434643766488'
@@ -19,8 +22,9 @@ HOP_EVENTS = set(['request_thread_control','pass_thread_control','take_thread_co
 def send_message(body):
   try:
     for entry in body['entry']:
+      url = SEND_API_URL
       if(entry['id'] != IG_ACC_TO_REPLY):
-        return
+        url = SEND_API_URL2
       if 'messaging' in entry:
         channel = 'messaging';
       else:
@@ -58,7 +62,7 @@ def send_message(body):
      print(e)
       
       
-def send_message_to_recipient(message_text, recipient_id, page_id):
+def send_message_to_recipient(message_text, recipient_id, page_id,url):
   message = {
     'recipient': {
       'id': recipient_id,
@@ -68,7 +72,7 @@ def send_message_to_recipient(message_text, recipient_id, page_id):
     },
     'tag': 'human_agent',
   }
-  r = requests.post(SEND_API_URL, data=json.dumps(message), headers=HEADERS)
+  r = requests.post(url, data=json.dumps(message), headers=HEADERS)
   if r.status_code != 200:
     print('== ERROR====')
     print(SEND_API_URL)
