@@ -26,7 +26,7 @@ HEADERS = {'content-type': 'application/json'}
 IG_ACC_TO_REPLY = '17841434643766488'
 APP_ID = '2908275256066436'
 APP_NAME = 'baozhangren'
-HOP_EVENTS = set(['request_thread_control','pass_thread_control','take_thread_control','pass_metadata'])
+HOP_EVENTS = set(['request_thread_control','pass_thread_control','take_thread_control','pass_thread_metadata'])
       
       
 def send_message(body):
