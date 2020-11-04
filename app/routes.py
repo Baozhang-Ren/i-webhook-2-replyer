@@ -30,7 +30,6 @@ HOP_EVENTS = set(['request_thread_control','pass_thread_control','take_thread_co
       
       
 def send_message(body):
-  print('body',body)
   try:
     for entry in body['entry']:
       page = 'page1'
