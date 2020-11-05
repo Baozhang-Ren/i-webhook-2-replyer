@@ -23,7 +23,7 @@ SEND_API_URL_page2_app2 = 'https://graph.facebook.com/v8.0/me/messages?access_to
   %PAGE_ACCESS_TOKEN_page2_app2
 
 HEADERS = {'content-type': 'application/json'}
-IG_ACC_TO_REPLY = '17841434643766488'
+IG_ACC_TO_REPLY = '90010208321901'
 APP_ID = '2908275256066436'
 APP_NAME = 'baozhangren'
 HOP_EVENTS = set(['request_thread_control','pass_thread_control','take_thread_control','pass_thread_metadata'])
