@@ -6,7 +6,7 @@ import requests
 
 WEBHOOK_VERIFY_TOKEN = 'test_faq_token'
 #Baozhang Ren baozhangren
-PAGE_ACCESS_TOKEN_page1_app1 = 'EAApVD5mMAYQBANxkibZBxVFthiTaMMNwiLSEvR2fqHwFSu6b05Nc2sWCZAtf8TdflqLwRZBAgvsC2iSLqxgZBuxYUiViWSXHZCDWCm9Q7vOALaPuzLmnTbD17QkzbmhWe2yKnjJqI2qckEbERxTGJnVd73ZCGlsHMZBdu2QeGZBJpUkUazmCdFqg'
+PAGE_ACCESS_TOKEN_page1_app1 = 'EAAGLznOFOKQBAKq11mILjIKSW8CtZCBuOqwhbpXObO8qw5yG7xIGkOH1b3ZAZCMlZBdS9BqoWM36HR0BPZCUVWqZCA2Fy92R6R2BtvWP7sGp2xBhdf02W8oGeY8aHLdHwdZCeSwYyV5G2Gfu8zKmyWabemOmUdsnbgQeavikB1FvAZDZD'
 SEND_API_URL_page1_app1 = 'https://graph.facebook.com/v8.0/me/messages?access_token=%s'\
   %PAGE_ACCESS_TOKEN_page1_app1
 
@@ -14,7 +14,7 @@ PAGE_ACCESS_TOKEN_page1_app2 = 'EAALC8ZAZCw0TcBAH8ySbpu9O3u1ZB6gmSHusXh3fpuGCgFq
 SEND_API_URL_page1_app2 = 'https://graph.facebook.com/v8.0/me/messages?access_token=%s'\
   %PAGE_ACCESS_TOKEN_page1_app2
 
-PAGE_ACCESS_TOKEN_page2_app1 = 'EAApVD5mMAYQBAK2ykO1MC0Gsf2ZChITTbREgQxFPunoIs0PQRrZCxXrMrLg4j8i5rDUKT5WIZCmZB8OrPCHdSML8ETpMtFMEUxIhKQYc0pYKvZBo4p0aPDCYd5q75kHGCMmTPjaovvZCxdm93XnJ4APlSwzng3qH14nDcEP0KcIEY0QaeSht9ZB'
+PAGE_ACCESS_TOKEN_page2_app1 = 'EAAGLznOFOKQBAKq11mILjIKSW8CtZCBuOqwhbpXObO8qw5yG7xIGkOH1b3ZAZCMlZBdS9BqoWM36HR0BPZCUVWqZCA2Fy92R6R2BtvWP7sGp2xBhdf02W8oGeY8aHLdHwdZCeSwYyV5G2Gfu8zKmyWabemOmUdsnbgQeavikB1FvAZDZD'
 SEND_API_URL_page2_app1 = 'https://graph.facebook.com/v8.0/me/messages?access_token=%s'\
   %PAGE_ACCESS_TOKEN_page2_app1
 
