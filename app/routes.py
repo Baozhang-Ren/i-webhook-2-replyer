@@ -4,7 +4,6 @@ from flask import make_response, request
 import json
 import requests
 
-WEBHOOK_VERIFY_TOKEN = 'test_faq_token'
 #Baozhang Ren baozhangren
 PAGE_ACCESS_TOKEN_page1_app1 = 'EAApVD5mMAYQBAFH52v8cL5QjsR1318apv0p2rgZBubYAATlr6OJmvMh2yco3VrytJYLa3fM8A7rYG0VzksoLQc6CdEYDl1rvL6MnmerW7kUW3SlKnPZBs49hxVjY13ruEv5pAAexmCRACUtC9COcQKwslxtYVxLrs7FNnbrMS275zfjcMF'
 SEND_API_URL_page1_app1 = 'https://graph.facebook.com/v8.0/me/messages?access_token=%s'\
