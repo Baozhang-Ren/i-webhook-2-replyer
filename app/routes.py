@@ -13,7 +13,7 @@ PAGE_ACCESS_TOKEN_page1_app2 = 'EAALC8ZAZCw0TcBAH8ySbpu9O3u1ZB6gmSHusXh3fpuGCgFq
 SEND_API_URL_page1_app2 = 'https://graph.facebook.com/v8.0/me/messages?access_token=%s'\
   %PAGE_ACCESS_TOKEN_page1_app2
 
-PAGE_ACCESS_TOKEN_page2_app1 = 'EAApVD5mMAYQBAFH52v8cL5QjsR1318apv0p2rgZBubYAATlr6OJmvMh2yco3VrytJYLa3fM8A7rYG0VzksoLQc6CdEYDl1rvL6MnmerW7kUW3SlKnPZBs49hxVjY13ruEv5pAAexmCRACUtC9COcQKwslxtYVxLrs7FNnbrMS275zfjcMF'
+PAGE_ACCESS_TOKEN_page2_app1 = 'EAApVD5mMAYQBABAzIZAbDxMzR4LUPd8c4HQoN4rOf4dejhHHZCsUVTnyuWZAh59gcyqYQjLcwP89m11ZCV5HqAJeTSOmXJX751aWJZAfCNmw1U7P8ftkKrWtKoL3nTNDFZCHIIgBD9dHWBhFEFyC2LOFwHZCJLZCIzuOBamhxc3B4AZDZD'
 SEND_API_URL_page2_app1 = 'https://graph.facebook.com/v8.0/me/messages?access_token=%s'\
   %PAGE_ACCESS_TOKEN_page2_app1
 
