@@ -61,6 +61,8 @@ def send_message(body):
         webhook_type = None
         if 'message' in message: 
           webhook_type='message'
+        if 'postback' in message: 
+          webhook_type='postback'
         for event in HOP_EVENTS:
           if event in message:
             webhook_type = event
