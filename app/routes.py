@@ -132,8 +132,8 @@ def webhook():
       return make_response('invalid params', 400)
   else: # POST
     body = json.loads(request.data)
-    print("swapnilc-Mydata")
+    #print("swapnilc-Mydata")
     print(body)
-    send_message(body)
+    #send_message(body)
     return ("", 205)
 
