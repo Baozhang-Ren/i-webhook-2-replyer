@@ -34,7 +34,7 @@ def send_message(body):
     for entry in body['entry']:
       page = 'page1'
       if(entry['id'] != IG_ACC_TO_REPLY):
-        print(entry['id'],'return')
+        #print(entry['id'],'return')
         page = 'page2'
       app = 'app1'
       if 'messaging' in entry:
@@ -42,7 +42,7 @@ def send_message(body):
       else:
         channel = 'standby';
         app = 'app2'
-      print('page',page,'app',app)
+      #print('page',page,'app',app)
       if page=='page1':
         if app=='app1':
           url = SEND_API_URL_page1_app1
@@ -77,6 +77,7 @@ def send_message(body):
         body['app_id'] = APP_ID
         body['app_name'] = APP_NAME
         if 'is_echo' in message[webhook_type]:
+          return
           send_message_to_recipient(json.dumps(body), recipient_id, sender, url)
           print('sent message to recipient_id', recipient_id)
         else:
@@ -84,6 +85,8 @@ def send_message(body):
             send_message_to_recipient(json.dumps(body), recipient_id, sender,url)
             print('sent message to HOP_EVENTS recipient', recipient_id)
             return
+          print(body)
+          return
           send_message_to_recipient(json.dumps(body), sender, recipient_id,url)
           print('sent message to sender', sender)
   except Exception as e:
