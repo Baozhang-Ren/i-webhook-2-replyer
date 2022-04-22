@@ -34,7 +34,7 @@ def send_message(body):
     for entry in body['entry']:
       page = 'page1'
       if(entry['id'] != IG_ACC_TO_REPLY):
-        print(entry['id'],'return')
+        #print(entry['id'],'return')
         page = 'page2'
       app = 'app1'
       if 'messaging' in entry:
@@ -42,7 +42,7 @@ def send_message(body):
       else:
         channel = 'standby';
         app = 'app2'
-      print('page',page,'app',app)
+      #print('page',page,'app',app)
       if page=='page1':
         if app=='app1':
           url = SEND_API_URL_page1_app1
@@ -77,15 +77,17 @@ def send_message(body):
         body['app_id'] = APP_ID
         body['app_name'] = APP_NAME
         if 'is_echo' in message[webhook_type]:
-          send_message_to_recipient(json.dumps(body), recipient_id, sender, url)
+          return
+          #send_message_to_recipient(json.dumps(body), recipient_id, sender, url)
           print('sent message to recipient_id', recipient_id)
         else:
           if webhook_type in HOP_EVENTS:
-            send_message_to_recipient(json.dumps(body), recipient_id, sender,url)
+            #send_message_to_recipient(json.dumps(body), recipient_id, sender,url)
             print('sent message to HOP_EVENTS recipient', recipient_id)
             return
-          send_message_to_recipient(json.dumps(body), sender, recipient_id,url)
-          print('sent message to sender', sender)
+          print(body)
+          #send_message_to_recipient(json.dumps(body), sender, recipient_id,url)
+          #print('sent message to sender', sender)
   except Exception as e:
      print("swapnilc-Exception sending")
      print(e)
@@ -129,7 +131,7 @@ def webhook():
       return make_response('invalid params', 400)
   else: # POST
     body = json.loads(request.data)
-    print("swapnilc-Mydata")
-    print(body)
+    #print("swapnilc-Mydata")
+    #print(body)
     send_message(body)
     return ("", 205)
