@@ -85,7 +85,6 @@ def send_message(body):
             #send_message_to_recipient(json.dumps(body), recipient_id, sender,url)
             print('sent message to HOP_EVENTS recipient', recipient_id)
             return
-          print(body)
           #send_message_to_recipient(json.dumps(body), sender, recipient_id,url)
           #print('sent message to sender', sender)
   except Exception as e:
@@ -132,6 +131,6 @@ def webhook():
   else: # POST
     body = json.loads(request.data)
     #print("swapnilc-Mydata")
-    #print(body)
+    print(body)
     send_message(body)
     return ("", 205)
